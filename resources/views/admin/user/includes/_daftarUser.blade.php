@@ -5,16 +5,16 @@
             {{ Form::open() }}
 
             {{ Form::label('Nama Penuh Pengguna')}}
-            {{ Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Nama Penuh']) }}
+            {{ Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Nama Penuh', 'required' => 'true']) }}
 
             {{ Form::label('Emel (Kata Nama)')}}
-            {{ Form::email('email', '', ['class' => 'form-control', 'placeholder' => 'Emel']) }}
+            {{ Form::email('email', '', ['class' => 'form-control', 'placeholder' => 'Emel', 'required' => 'true']) }}
 
             {{ Form::label('Kata Laluan')}}
-            {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kata Laluan']) }}
+            {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kata Laluan', 'required' => 'true']) }}
 
             {{ Form::label('Level Pengguna')}}
-            {{ Form::select('level', ['' => 'Level', 'admin' => 'ADMIN', 'user' => 'PEMBANCI'], 'Level', ['class' => 'form-control']) }}
+            {{ Form::select('level', ['' => 'Level', 'admin' => 'ADMIN', 'user' => 'PEMBANCI'], 'Level', ['class' => 'form-control', 'required' => 'true']) }}
 
             <div align="right"> 
                 <br />

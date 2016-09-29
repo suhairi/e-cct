@@ -64,6 +64,15 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'as'    => 'admin.user.postUpdate',
             'uses'  => 'Admin\DaftarController@postUpdateUser'
         ]);
+
+        // ###########################
+        //            API
+        // ###########################
+        Route::get('/API/users', function() {
+            return App\User::latest()->get();
+        });
+
+
     });
 
     // LOKALITI

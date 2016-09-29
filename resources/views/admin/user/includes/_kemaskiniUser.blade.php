@@ -5,11 +5,13 @@
 
             {{ Form::model($user, ['route' => 'admin.user.postUpdate', $user]) }}
 
+            {{ Form::hidden('id', $user->id) }}
+
             {{ Form::label('Nama Penuh Pengguna')}}
-            {{ Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nama Penuh']) }}
+            {{ Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nama Penuh', 'required' => 'true']) }}
 
             {{ Form::label('Emel (Kata Nama)')}}
-            {{ Form::email('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Emel']) }}
+            {{ Form::email('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Emel', 'required' => 'true']) }}
 
             {{ Form::label('Kata Laluan')}}
             {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kata Laluan']) }}

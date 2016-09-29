@@ -17,11 +17,14 @@
         @endif
 
 
-
-        <div class="col-xs-7">
+        <div class="col-xs-8">
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Pengguna</h4></div>
                 <div class="panel-body">
+
+                    <div id="carian_users">
+
+                    <!-- {{ Form::text('name', '', ['class' => 'form-control', 'v-model' => 'fa_users']) }} -->
 
                     <table class="table">
                         <tr>
@@ -30,19 +33,18 @@
                             <td><strong>Level</strong></td>
                             <td><strong>Pilihan</strong></td>
                         </tr>
-                        @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->level }}</td>
-                                <td>
-                                    [ <a href="{{ url('/admin/user/update/' . $user->id) }}">Kemaskini</a> ] 
-                                    [ <a href="{{ url('/admin/user/delete/' . $user->id) }}">Delete </a> ]
-                                </td>
-                            </tr>
-
-                        @endforeach
+                        <tr v-for="fa_user in fa_users">
+                            <td>@{{ fa_user.name }}</td>
+                            <td>@{{ fa_user.email }}</td>
+                            <td>@{{ fa_user.level }}</td>
+                            <td>
+                                <button class="btn btn-success" @click="updateUser(fa_user)">KEMASKINI</button>
+                                <button class="btn btn-danger" @click="deleteUser(fa_user)">HAPUS</button>
+                            </td>
+                        </tr>
                     </table>
+
+                    </div>
 
                 </div>
             </div>
@@ -52,4 +54,6 @@
     </div>
 
 </div>
+
+
 @endsection

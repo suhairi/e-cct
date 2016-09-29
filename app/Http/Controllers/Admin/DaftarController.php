@@ -18,6 +18,7 @@ class DaftarController extends Controller
         // get Senarai Pengguna
         $users = User::where('email', '!=', 'suhairi81@gmail.com')
             ->orderBy('level', 'asc')
+            ->orderBy('name', 'asc')
             ->get();
 
         return view('admin.user.index', compact('users'));
@@ -51,9 +52,10 @@ class DaftarController extends Controller
 
         $users = User::where('email', '!=', 'suhairi81@gmail.com')
             ->orderBy('level', 'asc')
+            ->orderBy('name', 'asc')
             ->get();
 
-        return view('admin.user.daftar', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
 
     public function deleteUser($id) {
@@ -74,10 +76,28 @@ class DaftarController extends Controller
 
         $users = User::where('email', '!=', 'suhairi81@gmail.com')
             ->orderBy('level', 'asc')
+            ->orderBy('name', 'asc')
             ->get();
 
         return view('admin.user.index', compact('users', 'user'));
+    }
 
+    public function postUpdateUser(Request $request) {
+
+        $user = User::find($request->id);
+
+        $user->name     = strtoupper($request->name);
+        $user->email    = $request->email;
+        $user->level    = $request->level;
+
+        if($request->password != '')
+            $user->password = bcrypt($request->password);
+
+        if($user->save()) {
+            Session::flash('success', 'Berjaya. Pengguna berjaya dikemaskini.');
+        }
+
+        return redirect('/admin/user/daftar');
     }
 
 }
