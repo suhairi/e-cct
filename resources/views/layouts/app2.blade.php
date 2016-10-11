@@ -45,35 +45,10 @@
 
                 @if(!Auth::guest())
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Daftar <span class="caret"></span>
-                            </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/admin/user/daftar') }}">User </a>
-                                    <a href="{{ url('/admin/lokaliti/daftar')}}">Lokaliti</a>
-                                    <a href="{{ url('/admin/kaedah_tanam/daftar') }}">Kaedah Tanam</a>
-                                    <a href="{{ url('/admin/varieti/daftar') }}">Varieti</a>
-                                    <a href="{{ url('/admin/projek/daftar') }}">Projek</a>
-                                    <a href="{{ url('/admin/blok/daftar') }}">Blok</a>
-                                </li>
-                            </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Laporan <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="#">Laporan 1</a>
-                                    <a href="#">Laporan 2</a>
-                                    <a href="#">Laporan 3</a>
-                                </li>
-                            </ul>
-                    </li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url('/user/rekod') }}">Rekod</a></li>
+                    
                 </ul>
                 @endif
 
@@ -125,7 +100,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/pace.min.js"></script>
- 
 
+    @yield('js')
 </body>
 </html>

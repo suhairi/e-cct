@@ -9,6 +9,8 @@
 
         <h3>Lokaliti</h3>
 
+        @include('admin.kaedah_tanam.includes._daftarKaedah')
+
 
         <div class="col-xs-7">
             <div class="panel panel-info">

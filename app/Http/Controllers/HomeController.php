@@ -26,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         if(Auth::user()->level == 'admin')
             return view('admin.index');
         else
