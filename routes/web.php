@@ -166,7 +166,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         // ###########################
 
     });
-
     // END OF LOKALITI
 
     // VARIETI
@@ -220,48 +219,78 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         });
 
     });
-
     //END OF VARIETI
 
 
     // PROJEK
 
-        Route::group(['prefix' => 'projek'], function() {
+    Route::group(['prefix' => 'projek'], function() {
 
-            Route::get('/daftar', [
-                'as'    => 'admin.projek.daftar',
-                'uses'  => 'Admin\ProjekController@index'
-            ]);
+        Route::get('/daftar', [
+            'as'    => 'admin.projek.daftar',
+            'uses'  => 'Admin\ProjekController@index'
+        ]);
 
-            Route::post('/daftar', [
-                'as'    => 'admin.projeck.daftar',
-                'uses'  => 'Admin\ProjekController@daftar'
-            ]);
+        Route::post('/daftar', [
+            'as'    => 'admin.projeck.daftar',
+            'uses'  => 'Admin\ProjekController@daftar'
+        ]);
 
-            Route::get('/hapus/{id}', function($id) {
-                App\Projek::destroy($id);
-                return redirect()->route('admin.projek.daftar');
-            });
-
-            Route::get('/kemaskini/{id}', [
-                'as'    => 'admin.projek.kemaksini',
-                'uses'  => 'Admin\ProjekController@kemaskini'
-            ]);
-
-            Route::post('/update/{id}', [
-                'as'    => 'admin.projek.update',
-                'uses'  => 'Admin\ProjekController@update'
-            ]);
+        Route::get('/hapus/{id}', function($id) {
+            App\Projek::destroy($id);
+            return redirect()->route('admin.projek.daftar');
         });
+
+        Route::get('/kemaskini/{id}', [
+            'as'    => 'admin.projek.kemaksini',
+            'uses'  => 'Admin\ProjekController@kemaskini'
+        ]);
+
+        Route::post('/update/{id}', [
+            'as'    => 'admin.projek.update',
+            'uses'  => 'Admin\ProjekController@update'
+        ]);
+    });
     // END PROJEK
 
     // BLOK
 
-        Route::group(['prefix' => 'blok'], function() {
+    Route::group(['prefix' => 'blok'], function() {
 
-            Route::get('/daftar', 'Admin\BlokController@index');
+        Route::get('/daftar', [
+            'as'    => 'admin.blok.daftar',
+            'uses'  => 'Admin\BlokController@index'
+        ]);
+
+        Route::post('/daftar', [
+            'as'    => 'admin.blok.daftar',
+            'uses'  => 'Admin\BlokController@daftar'
+        ]);
+
+        Route::get('/hapus/{id}', function($id) {
+            
+            if(App\Blok::destroy($id))
+                Session::flash('success', 'Berjaya. Blok telah dihapuskan.');
+            else
+                Session::flash('error', 'Gagal. Blok gagal dihapuskan.');
+
+            return redirect()->route('admin.blok.daftar');
         });
 
+        Route::get('/kemaskini/{id}', [
+            'as'    => 'admin.blok.kemaskini',
+            'uses'  => 'Admin\BlokController@kemaskini'
+        ]);
+
+        Route::post('/kemaskini/{id}', [
+            'as'    => 'admin.blok.kemaskini',
+            'uses'  => 'Admin\BlokController@update'
+        ]);
+
+    });
+    // END OF BLOK
+
+    
 
 });
 

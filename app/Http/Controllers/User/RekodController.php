@@ -10,6 +10,7 @@ use App\Wilayah;
 use App\Lokaliti;
 use App\KaedahTanam;
 use App\Projek;
+use App\Blok;
 
 class RekodController extends Controller
 {
@@ -18,11 +19,12 @@ class RekodController extends Controller
         $wilayah    = Wilayah::pluck('name', 'id');
         $lokaliti   = Lokaliti::pluck('code', 'id');
         $kaedah     = KaedahTanam::pluck('name', 'id');
-        $projects     = Projek::pluck('name', 'id');
+        $projects   = Projek::pluck('name', 'id');
+        $blocks     = Blok::pluck('name', 'id');
 
         // return $wilayah;
 
-        return view('user.rekod', compact('wilayah', 'lokaliti', 'kaedah', 'projects'));
+        return view('user.rekod', compact('wilayah', 'lokaliti', 'kaedah', 'projects', 'blocks'));
     }
 
 

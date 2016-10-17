@@ -22,7 +22,7 @@
 
         <div class="col-xs-8">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Pengguna</h4></div>
+                <div class="panel-heading"><div align="left"><h4>Senarai Pengguna</h4></div><div align="right">PDF</div></div>
                 <div class="panel-body">
 
                     <table class="table">
