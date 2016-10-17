@@ -17,7 +17,7 @@
                 <tr>
                     <td><strong>Lokaliti</strong></td>
                     <td>:</td>
-                    <td><div id="data_lokaliti"></div></td>
+                    <td><div id="text_lokaliti"></div></td>
                 </tr>
                 <tr>
                     <td><strong>Projek</strong></td>

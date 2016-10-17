@@ -14,30 +14,30 @@
             <tr>
                 <td align="center"><strong>1.</strong></td>
                 <td><strong>Bil Tangkai</strong></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data1_tangkai" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data2_tangkai" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data3_tangkai" name="" class="form-control" required="true"></td>
             </tr>
             <tr>
                 <td align="center"><strong>2.</strong></td>
                 <td><strong>Bil. Biji/Tangkai</td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data1_bilTangkai" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data2_bilTangkai" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data3_bilTangkai" name="" class="form-control" required="true"></td>
             </tr>
             <tr>
                 <td><strong>3.</strong></td>
                 <td><strong>% Bernas</strong></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data1_bernas" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data2_bernas" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data3_bernas" name="" class="form-control" required="true"></td>
             </tr>
             <tr>
                 <td><strong>4.</strong></td>
                 <td><strong>Berat 1000 Biji</strong></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
-                <td><input type="" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data1_1000Biji" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data2_1000Biji" name="" class="form-control" required="true"></td>
+                <td><input type="text" id="data3_1000Biji" name="" class="form-control" required="true"></td>
             </tr>
         </table>
             
