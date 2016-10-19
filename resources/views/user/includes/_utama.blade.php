@@ -22,7 +22,7 @@
                 <tr>
                     <td><strong>Projek</strong></td>
                     <td>:</td>
-                    <td>{{ Form::select('projek', $projects, '', ['class' => 'form-control', 'placeholder' => 'Nama Projek']) }}</td>
+                    <td><div id="text_projek"></div></td>
                 </tr>
                 <tr>
                     <td><strong>No Blok</strong></td>
@@ -37,15 +37,13 @@
                 <tr>
                     <td><strong>No Lot</strong></td>
                     <td>:</td>
-                    <td>{{ Form::text('lot_no', '', ['class' => 'form-control', 'placeholder' => 'No Lot']) }}</td>
+                    <td>{{ Form::text('lot_no', '', ['class' => 'form-control', 'placeholder' => 'No Lot', 'id' => 'no_lot']) }}</td>
                 </tr>
                 <tr>
                     <td><strong>Fasa</strong></td>
                     <td>:</td>
-                    <td>{{ Form::text('fasa', '', ['class' => 'form-control', 'placeholder' => 'Fasa']) }}</td>
+                    <td>{{ Form::text('fasa', '', ['class' => 'form-control', 'placeholder' => 'Fasa', 'id' => 'fasa']) }}</td>
                 </tr>
-
-
 
             </table>
 

@@ -22,7 +22,6 @@ Route::get('/', function () {
             return view('user.index');
     }
 
-
 	
 });
 
@@ -309,6 +308,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user'], function() {
         Route::get('/getLokaliti/{id}', function($id) {
             return App\Lokaliti::where('wilayah_id', $id)->get();
         });
+
+        Route::get('/getProjek/{id}', function($id) {
+            return App\Projek::where('lokaliti_id', $id)->get();
+        });
+
+
 
 
     });

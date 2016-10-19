@@ -26,18 +26,69 @@ $(document).ready(function() {
         });
     });
 
+    $('#text_lokaliti').change(function() {
+
+        console.log('locality changed!');
+
+        var text_project = $('#text_projek');
+        var options = "";
+
+        // alert($('#lokaliti').val());
+        
+        $.ajax({
+            type: "GET",
+            url: "/user/API/getProjek/" + $("#lokaliti").val(),
+            success: function(projects) {
+
+                $('#text_projek').empty();
+
+                $.each(projects, function(i, project) {
+                   options += "<option value='" + project.id + "'>" + project.code + " - " + project.name + "</option>";
+                });
+
+                text_project.append(
+                    "<select name='projek_id' class='form-control' id='lokaliti'>" +
+                    "<option value=''>Projek</option>" +
+                    options +
+                    "</select>"
+                );
+            }
+        });
+
+    });
+
+    // UTAMA TEXT FIELD
+    $('#no_lot').change(function() {
+        var value = $('#no_lot').val();
+        if(value == '' || !$.isNumeric(value))
+            $('#no_lot').val("0");
+    });
+
+    $('#fasa').change(function() {
+        var value = $('#fasa').val();
+        if(value == '' || !$.isNumeric(value))
+            $('#fasa').val("0");
+    });
+
+
+    // HASIL TEXT FIELD
     $("[id^=data]").keyup(function() {
         assignZero();
         calcPurata();
     });
 
     $(":text").focus(function() {
+        if($(this).val() == 0 || $(this).val() == '') {
+            assignZero();
+            $(this).val("");
+        }
+    });
+
+    $(":text").focusout(function() {
         assignZero();
-        $(this).val("");
     });
 
     function assignZero() {
-
 
         $("[id^=data]").each(function(index, value) {
             // assign empty field with "0"
@@ -47,9 +98,7 @@ $(document).ready(function() {
             // assign not a numeric with ""
             var value = $('#' + $(this).attr('id')).val();
             if(!$.isNumeric(value))
-                $('#' + $(this).attr('id')).val("");
-
-            
+                $('#' + $(this).attr('id')).val("");            
         });
     }
 
@@ -96,10 +145,24 @@ $(document).ready(function() {
         });
 
         bil = bil + 1;
-        purata = parseInt(jumlah / bil);
+        purata = parseFloat(jumlah / bil);
         $("#purata_peratus_bernas").empty();
-        $("#purata_peratus_bernas").append(purata.toFixed(0));
+        $("#purata_peratus_bernas").append(purata.toFixed(2));
+
+        // ############################
+        // 4 - Purata data?1000Biji
+        // ############################
+        var purata = jumlah = bil = 0;
+        $("[id^=data][id*=_1000Biji]" ).each(function(index, value) {
+            bil = index;
+            let nilai = $('#' + $(this).attr('id')).val();
+            jumlah += parseInt(nilai);
+        });
+
+        bil = bil + 1;
+        purata = parseFloat(jumlah / bil);
+        $("#purata_1000_biji").empty();
+        $("#purata_1000_biji").append(purata.toFixed(3));
         
     }
-
 });

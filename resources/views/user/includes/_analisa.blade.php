@@ -14,8 +14,8 @@
                     <td><strong>Cadangan / Tindakan</strong></td>
                 </tr>
                 <tr>
-                    <td align="center">1.</td>
-                    <td>Bil Tangkai</td>
+                    <td align="center"><strong>1.</strong></td>
+                    <td><strong>Bil Tangkai</strong></td>
                     <td><div align="right" id="purata_tangkai"></div></td>
                     <td><div id="pencapaian_tangkai"></div></td>
                     <td><div id="penyebab_tangkai"></div></td>
@@ -23,8 +23,8 @@
                     <td><div id="cadangan_tangkai"></div></td>
                 </tr>
                 <tr>
-                    <td align="center">2.</td>
-                    <td>Bil biji/tangkai</td>
+                    <td align="center"><strong>2.</strong></td>
+                    <td><strong>Bil Biji/Tangkai</strong></td>
                     <td><div align="right" id="purata_biji_per_tangkai"></div></td>
                     <td><div id="pencapaian_biji_per_tangkai"></div></td>
                     <td><div id="penyebab_biji_per_tangkai"></div></td>
@@ -32,8 +32,8 @@
                     <td><div id="cadangan_biji_per_tangkai"></div></td>
                 </tr>
                 <tr>
-                    <td align="center">3.</td>
-                    <td>% bernas</td>
+                    <td align="center"><strong>3.</strong></td>
+                    <td><strong>% Bernas</strong></td>
                     <td><div align="right" id="purata_peratus_bernas"></div></td>
                     <td><div id="pencapaian_peratus_bernas"></div></td>
                     <td><div id="penyebab_peratus_bernas"></div></td>
@@ -41,8 +41,8 @@
                     <td><div id="cadangan_peratus_bernas"></div></td>
                 </tr>
                 <tr>
-                    <td align="center">4.</td>
-                    <td>Berat 1000 biji</td>
+                    <td align="center"><strong>4.</strong></td>
+                    <td><strong>Berat 1000 Biji</strong></td>
                     <td><div align="right" id="purata_1000_biji"></div></td>
                     <td><div id="pencapaian_1000_biji"></div></td>
                     <td><div id="penyebab_1000_biji"></div></td>
