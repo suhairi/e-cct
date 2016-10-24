@@ -45,12 +45,6 @@ class LokalitiTableSeeder extends Seeder
         	'wilayah_id'	=> 1
     	]);
 
-    	Lokaliti::create([
-        	'code'			=> 'F1',
-        	'name'			=> 'pertubuhan peladang kawasan F1',
-        	'wilayah_id'	=> 1
-    	]);
-
 
     	//############## WILAYAH 2 ################
     	
