@@ -16,9 +16,10 @@ class BlokController extends Controller
 {
     public function index() {
 
-        $blocks = Blok::all();
+        $blocks = Blok::paginate(15);
+        $total = Blok::count();
 
-        return view('admin.blok.index', compact('blocks'));
+        return view('admin.blok.index', compact('blocks', 'total'));
     }
 
     public function daftar(Request $request) {

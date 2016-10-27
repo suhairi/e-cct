@@ -21,6 +21,8 @@ class DaftarController extends Controller
             ->orderBy('name', 'asc')
             ->get();
 
-        return view('admin.user.index', compact('users'));
+        $total = User::count();
+
+        return view('admin.user.index', compact('users', 'total'));
     }
 }

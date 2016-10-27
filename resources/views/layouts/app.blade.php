@@ -56,7 +56,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ url('/admin/user/daftar') }}">User </a>
+                                    <a href="{{ url('/admin/user/daftar') }}">Pengguna </a>
                                     <a href="{{ url('/admin/lokaliti/daftar')}}">Lokaliti</a>
                                     <a href="{{ url('/admin/kaedah_tanam/daftar') }}">Kaedah Tanam</a>
                                     <a href="{{ url('/admin/varieti/daftar') }}">Varieti</a>

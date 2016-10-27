@@ -15,8 +15,9 @@ class CreateBlokTable extends Migration
     {
         Schema::create('blok', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code', 15);
-            $table->string('name', 25);
+            $table->string('code');
+            $table->string('name');
+            $table->string('lokaliti_id', 25);
         });
     }
 

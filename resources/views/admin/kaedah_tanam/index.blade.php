@@ -14,7 +14,7 @@
 
     <div class="col-xs-7">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Kaedah Penanaman</h4></div>
+                <div class="panel-heading"><h4>Senarai Kaedah Penanaman <small>({{ $total }} Kaedah)</small></h4></div>
                 <div class="panel-body">
                 <div id="kaedah_tanam">
 

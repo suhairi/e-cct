@@ -14,7 +14,7 @@
 
         <div class="col-xs-7">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Pengguna</h4></div>
+                <div class="panel-heading"><h4>Senarai Lokaliti <small>({{ $total }} Lokaliti)</small></h4></div>
                 <div class="panel-body">
 
                     <table class="table">

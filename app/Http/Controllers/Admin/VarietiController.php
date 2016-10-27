@@ -12,6 +12,8 @@ class VarietiController extends Controller
 {
     public function index() {
 
-        return view('admin/varieti/index');
+        $total = Varieti::count();
+
+        return view('admin/varieti/index', compact('total'));
     }
 }

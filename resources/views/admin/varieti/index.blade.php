@@ -18,7 +18,7 @@
 
         <div class="col-xs-7">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Varieti</h4></div>
+                <div class="panel-heading"><h4>Senarai Varieti <small>({{ $total }} Varieti)</small></h4></div>
                 <div class="panel-body">
 
                     <table class="table">

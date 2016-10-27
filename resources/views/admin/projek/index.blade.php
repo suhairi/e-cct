@@ -21,7 +21,7 @@
 
         <div class="col-xs-7">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Projek</h4></div>
+                <div class="panel-heading"><h4>Senarai Projek <small>({{ $total }} Projek)</small></h4></div>
                 <div class="panel-body">
 
                     <table class="table">
@@ -44,6 +44,8 @@
 
                         @endforeach
                     </table>
+
+                    <div align="center">{{ $projects->links() }}</div>
 
 
                 </div>

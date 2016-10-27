@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LokalitiTableSeeder::class);
         $this->call(KaedahTanamTableSeeder::class);
         $this->call(VarietiTableSeeder::class);
+        $this->call(ProjekTableSeeder::class);
+        $this->call(BlokTableSeeder::class);
     }
 }

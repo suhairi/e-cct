@@ -19,9 +19,10 @@ class KaedahTanamController extends Controller
     public function daftar() {
 
         $kaedahs = KaedahTanam::orderBy('name', 'asc')->get();
+        $total = KaedahTanam::count();
 
 
-        return view('admin.kaedah_tanam.index', compact('kaedahs'));
+        return view('admin.kaedah_tanam.index', compact('kaedahs', 'total'));
     }
 
     // public function postDaftar(Request $request) {

@@ -18,10 +18,12 @@ class ProjekController extends Controller
 {
     public function index() {
 
-        $projects = Projek::all();
+        $projects = Projek::paginate(15);
         $localities = Lokaliti::pluck('code', 'id');
 
-        return view('admin.projek.index', compact('projects', 'localities'));
+        $total = Projek::count();
+
+        return view('admin.projek.index', compact('projects', 'localities', 'total'));
     }
 
     public function daftar(Request $request) {

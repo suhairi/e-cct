@@ -16,7 +16,8 @@ class LokalitiController extends Controller
 
         $localities = Lokaliti::orderby('wilayah_id', 'asc')
             ->paginate(10);
+        $total = Lokaliti::count();
 
-        return view('admin.lokaliti.index', compact('localities'));
+        return view('admin.lokaliti.index', compact('localities', 'total'));
     }
 }

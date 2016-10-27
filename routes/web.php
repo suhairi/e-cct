@@ -52,6 +52,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'uses'  => 'Admin\DaftarController@daftar'
         ]);
 
+        // PDF
+        Route::get('/pdf', [
+            'as'    => 'admin.user.pdf',
+            'uses'  => 'Admin\DownloadController@user'
+        ]);
+
+
 
         // ###########################
         //            API
