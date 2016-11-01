@@ -16,7 +16,7 @@ Route::get('/', function () {
         return view('auth.login');
     } else {
 
-        if(Auth::user()->level == 'admin')
+        if(Auth::user()->level == 'ADMIN')
             return view('admin.index');
         else
             return view('user.index');
@@ -59,12 +59,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         ]);
 
 
-
         // ###########################
         //            API
         // ###########################
             Route::get('/API/users', function() {
-                $users =  App\User::all();
+                $users =  App\User::orderBy('level', 'asc')->get();
                 return $users;
             });
 
@@ -119,6 +118,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/daftar', [
             'as'    => 'admin.lokaliti.daftar',
             'uses'  => 'Admin\LokalitiController@daftar'
+        ]);
+
+        Route::get('/pdf', [
+            'as'    => 'admin.lokaliti.pdf',
+            'uses'  => 'Admin\DownloadController@lokaliti'
         ]);
     });
 

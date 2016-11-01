@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pdf')
 
 
 @section('content')
@@ -7,13 +7,9 @@
 
     <div class="row">
 
-        <h3>Lokaliti</h3>
-
-        @include('admin.kaedah_tanam.includes._daftarKaedah')
-
+        <h3>Sistem e-CCT</h3>
 
         <div class="col-xs-8">
-            <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.lokaliti.pdf') }}">PDF</a> | <a href="#">Excel</a> </span></p> </div>
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Lokaliti <small>({{ $total }} Lokaliti)</small></h4></div>
                 <div class="panel-body">
@@ -30,10 +26,12 @@
                                 <td>{{ $lokaliti->code }}</td>
                                 <td>{{ $lokaliti->wilayah->name }}</td>
                             </tr>
+                            @if($loop->index / 15 == 0)
+                                <div class="page-break"></div>
+                            @endif
+
                         @endforeach
                     </table>
-
-                    <div align="center">{{ $localities->links() }}</div>
 
                 </div>
             </div>

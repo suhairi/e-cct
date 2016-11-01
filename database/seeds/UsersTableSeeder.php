@@ -16,9 +16,9 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Suhairi Abdul Hamid',
 			'email' => 'suhairi81@gmail.com',
 			'password' => bcrypt("suhairi"),
-            'level' => 'admin'
+            'level' => strtoupper('admin')
 		]);
 
-        factory('App\User', 25)->create();
+        factory('App\User', 35)->create();
     }
 }
