@@ -15,21 +15,31 @@
 
                     <table class="table">
                         <tr>
-                            <td>Bil</td>
+                            <td><strong>Bil</strong></td>
                             <td><strong>Nama </strong></td>
                             <td><strong>Email</strong></td>                            
                             <td><strong>Level</strong></td>
-                        </tr>
+                        </tr>     
+                        
                         @foreach($users as $user)
-                        <tr>
-                            <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->level }}</td>
-                        </tr>
-                        @if((($loop->index + 1) % 10) == 0)
-                            <div class="page-break"></div>
-                        @endif
+                            <tr>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->level }}</td>
+                            </tr>
+                            @if(($loop->index + 1) % $rowPerPage == 0)
+                                </table>
+                                <div class="page-break"></div>
+                                <br /><br />                                
+                                <table class="table">                                    
+                                    <tr>
+                                        <td><strong>Bil </strong></td>
+                                        <td><strong>Nama </strong></td>
+                                        <td><strong>Email </strong></td>                            
+                                        <td><strong>Level </strong></td>
+                                    </tr>
+                            @endif                     
                         @endforeach
                     </table>
 

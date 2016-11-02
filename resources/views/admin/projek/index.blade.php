@@ -14,25 +14,26 @@
             @include('admin.projek.includes._projek')
         @else
             @include('admin.projek.includes._kemaskini')
-        @endif
-
-        
+        @endif        
 
 
-        <div class="col-xs-7">
+        <div class="col-xs-8">
+            <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.projek.pdf') }}">PDF</a> </span></p> </div>
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Projek <small>({{ $total }} Projek)</small></h4></div>
                 <div class="panel-body">
 
                     <table class="table">
                         <tr>
-                            <td><strong>Nama Projek</strong></td>
+                            <td><strong>Bil</strong></td>
+                            <td><strong>Nama Projek </strong></td>
                             <td><strong>Kod</strong></td>                            
                             <td><strong>Lokaliti</strong></td>                            
-                            <td><strong>Pilihan</strong></td>                            
+                            <td align="center"><strong>Pilihan</strong></td>                            
                         </tr>
                         @foreach($projects as $project)
                             <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $project->name }}</td>
                                 <td>{{ $project->code }}</td>
                                 <td>{{ $project->lokaliti->code }}</td>
@@ -46,7 +47,6 @@
                     </table>
 
                     <div align="center">{{ $projects->links() }}</div>
-
 
                 </div>
             </div>

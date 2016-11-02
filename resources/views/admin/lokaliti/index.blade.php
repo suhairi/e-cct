@@ -13,7 +13,7 @@
 
 
         <div class="col-xs-8">
-            <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.lokaliti.pdf') }}">PDF</a> | <a href="#">Excel</a> </span></p> </div>
+            <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.lokaliti.pdf') }}">PDF</a> </span></p> </div>
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Lokaliti <small>({{ $total }} Lokaliti)</small></h4></div>
                 <div class="panel-body">

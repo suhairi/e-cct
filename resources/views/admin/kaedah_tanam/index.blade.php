@@ -12,36 +12,34 @@
     
 
 
-    <div class="col-xs-7">
+    <div class="col-xs-8">
+        <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.kaedah.pdf') }}">PDF</a> </span></p> </div>
+
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Kaedah Penanaman <small>({{ $total }} Kaedah)</small></h4></div>
                 <div class="panel-body">
-                <div id="kaedah_tanam">
+                    <div id="kaedah_tanam">
 
-                    <table class="table">
-                        <tr>
-                            <td><strong>Nama</strong></td>
-                            <td><strong>Kod</strong></td>                            
-                            <td><strong>Pilihan</strong></td>
-                        </tr>
-                        <tr v-for="kaedah in kaedahs">
-                            <td>@{{ kaedah.name }}</td>
-                            <td>@{{ kaedah.code }}</td>
-                            <td>
-                                <button class="btn btn-default" @click="updateData(kaedah)">KEMASKINI</button>
-                                <button class="btn btn-danger" @click="deleteData(kaedah.id)">HAPUS</button>
-                            </td>
-                        </tr>
-
-
-
-                    </table>
-
-                </div>
+                        <table class="table">
+                            <tr>
+                                <td><strong>Nama</strong></td>
+                                <td><strong>Kod</strong></td>                            
+                                <td><strong>Pilihan</strong></td>
+                            </tr>
+                            <tr v-for="kaedah in kaedahs">
+                                <td>@{{ kaedah.name }}</td>
+                                <td>@{{ kaedah.code }}</td>
+                                <td>
+                                    <button class="btn btn-default" @click="updateData(kaedah)">KEMASKINI</button>
+                                    <button class="btn btn-danger" @click="deleteData(kaedah.id)">HAPUS</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
 
-        </div>
+    </div>
 </div>
 
 </div>

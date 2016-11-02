@@ -16,6 +16,8 @@ Route::get('/', function () {
         return view('auth.login');
     } else {
 
+        // return Auth::user()->level;
+
         if(Auth::user()->level == 'ADMIN')
             return view('admin.index');
         else
@@ -27,15 +29,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/register', function() {
+// Route::get('/register', function() {
 
-    function __construct() {
-        $this->middleware('auth');
-        Session::flush();
-    }
+//     function __construct() {
+//         $this->middleware('auth');
+//         Session::flush();
+//     }
 
-    return redirect('/home');
-});
+//     return redirect('/home');
+// });
 
 Route::get('/home', 'HomeController@index');
 
@@ -73,7 +75,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
                 $user->name     = strtoupper(Request::get('name'));
                 $user->email    = Request::get('email');
                 $user->password = bcrypt(Request::get('password'));
-                $user->level    = strtolower(Request::get('level'));
+                $user->level    = strtoupper(Request::get('level'));
                 $user->save();
 
                 return $user;
@@ -93,7 +95,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
                 $user->name = strtoupper(Request::get('name'));
                 $user->email = strtolower(Request::get('email'));
-                $user->level = strtolower(Request::get('level'));
+                $user->level = strtoupper(Request::get('level'));
 
                 if(Request::get('password'))
                     $user->password = bcrypt(Request::get('password'));
@@ -132,6 +134,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/daftar', [
             'as'    => 'admin.kaedah_tanam.daftar',
             'uses'  => 'Admin\KaedahTanamController@daftar'
+        ]);
+
+        Route::get('/pdf', [
+            'as'    =>  'admin.kaedah.pdf',
+            'uses'  => 'Admin\DownloadController@kaedah'
         ]);
 
         // ###########################
@@ -185,6 +192,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/daftar', [
             'as'    => 'admin.varieti.daftar',
             'uses'  => 'Admin\VarietiController@index'
+        ]);
+
+        Route::get('/pdf', [
+            'as'    => 'admin.varieti.pdf',
+            'uses'  => 'Admin\DownloadController@varieti'
         ]);
 
         Route::group(['prefix' => 'API'], function() {
@@ -260,6 +272,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'as'    => 'admin.projek.update',
             'uses'  => 'Admin\ProjekController@update'
         ]);
+
+        Route::get('/pdf', [
+            'as'    => 'admin.projek.pdf',
+            'uses'  => 'Admin\DownloadController@projek'
+        ]);
     });
     // END PROJEK
 
@@ -275,6 +292,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::post('/daftar', [
             'as'    => 'admin.blok.daftar',
             'uses'  => 'Admin\BlokController@daftar'
+        ]);
+
+        Route::get('/pdf', [
+            'as'    => 'admin.blok.pdf',
+            'uses'  => 'Admin\DownloadController@blok'
         ]);
 
         Route::get('/hapus/{id}', function($id) {

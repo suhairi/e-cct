@@ -3,7 +3,6 @@
         <div class="panel-heading"><h4>Daftar Pengguna</h4></div>
         <div class="panel-body">
 
-        ID : @{{ newUser.id }}
             {{ Form::open(['url' => '#', '@submit.prevent' => 'addUser']) }}
 
 
@@ -17,7 +16,7 @@
             {{ Form::password('password', ['class' => 'form-control', 'v-model' => 'newUser.password', 'placeholder' => 'Kata Laluan', 'required' => 'true']) }}
 
             {{ Form::label('Level Pengguna')}}
-            {{ Form::select('level', ['' => 'Level', 'admin' => 'ADMIN', 'user' => 'PEMBANCI'], 'Level', ['class' => 'form-control', 'v-model' => 'newUser.level', 'required' => 'true']) }}
+            {{ Form::select('level', ['' => 'Level', 'ADMIN' => 'ADMIN', 'USER' => 'PEMBANCI'], 'Level', ['class' => 'form-control', 'v-model' => 'newUser.level', 'required' => 'true']) }}
 
             <div align="right"> 
                 <br />

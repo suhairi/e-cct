@@ -11,15 +11,17 @@ use Validator;
 use Session;
 
 use App\Blok;
+use App\Lokaliti;
 
 class BlokController extends Controller
 {
     public function index() {
 
         $blocks = Blok::paginate(15);
+        $localities = Lokaliti::pluck('code', 'id');
         $total = Blok::count();
 
-        return view('admin.blok.index', compact('blocks', 'total'));
+        return view('admin.blok.index', compact('blocks', 'total', 'localities'));
     }
 
     public function daftar(Request $request) {

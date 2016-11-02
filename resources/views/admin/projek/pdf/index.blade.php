@@ -4,28 +4,29 @@
 @section('content')
 
 <div class="container">
+
     <div class="row">
 
         <h3>Sistem e-CCT</h3>
 
-        <div class="col-xs-12">
+        <div class="col-xs-10">
             <div class="panel panel-info">
-                <div class="panel-heading"><h4>Senarai Lokaliti </h4></div>
+                <div class="panel-heading"><h4>Senarai Projek </h4></div>
                 <div class="panel-body">
 
                     <table class="table">
                         <tr>
-                            <td><strong>Bil </strong></td>
-                            <td><strong>Nama</strong></td>
-                            <td><strong>Kod</strong></td>                            
-                            <td><strong>Wilayah</strong></td>
+                            <td><strong>Bil</strong></td>
+                            <td><strong>Nama Projek </strong></td>
+                            <td><strong>Kod</strong></td>
+                            <td><strong>Lokaliti</strong></td>                            
                         </tr>
-                        @foreach($localities as $lokaliti)
+                        @foreach($projects as $project)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ strtoupper($lokaliti->name) }}</td>
-                                <td>{{ $lokaliti->code }}</td>
-                                <td>{{ $lokaliti->wilayah->name }}</td>
+                                <td>{{ $project->name }}</td>
+                                <td>{{ $project->code }}</td>
+                                <td>{{ $project->lokaliti->code }}</td>
                             </tr>
                             @if(($loop->index + 1) % 18 == 0)
                                 </table>
@@ -33,10 +34,10 @@
                                 <br /><br />
                                 <table class="table">
                                     <tr>
-                                        <td><strong>Bil </strong></td>
-                                        <td><strong>Nama</strong></td>
+                                        <td><strong>Bil</strong></td>
+                                        <td><strong>Nama Projek </strong></td>
                                         <td><strong>Kod</strong></td>
-                                        <td><strong>Wilayah</strong></td>
+                                        <td><strong>Lokaliti</strong></td>
                                     </tr>
                             @endif
 
@@ -51,4 +52,5 @@
     </div>
 
 </div>
+
 @endsection

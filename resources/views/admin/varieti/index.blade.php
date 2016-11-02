@@ -16,7 +16,8 @@
         @include('admin.varieti.includes._varieti')
 
 
-        <div class="col-xs-7">
+        <div class="col-xs-8">
+            <div align="right"><p><span class="glyphicon glyphicon-download-alt"> <a href="{{ route('admin.varieti.pdf') }}">PDF</a> </span></p> </div>
             <div class="panel panel-info">
                 <div class="panel-heading"><h4>Senarai Varieti <small>({{ $total }} Varieti)</small></h4></div>
                 <div class="panel-body">
